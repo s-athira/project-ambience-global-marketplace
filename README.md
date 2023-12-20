@@ -1,26 +1,28 @@
-# Traditional Building Materials Marketplace
+# Ambience
 
 ## Overview
 
-The Traditional Building Materials Marketplace is a distinctive online platform designed to connect enthusiasts with a passion for unique, traditionally made interior building materials sourced from around the world. This marketplace not only simplifies the process of purchasing these materials but also aims to showcase the rich cultural heritage, craftsmanship, and diverse techniques involved in their creation.
+The Unique Building Materials Marketplace, called Ambience is a distinctive online platform designed to connect construction businesses, architects and designers with a passion for unique, traditionally made building materials sourced from around the world. This marketplace not only provides access to and simplifies the process of purchasing these materials but also aims to showcase the rich cultural heritage, craftsmanship, and diverse techniques involved in their creation.
 
 ### Problem
 
-Enthusiasts seeking traditional interior building materials often face challenges in finding and acquiring these items, which are scattered across the globe. The Traditional Building Materials Marketplace addresses this issue by offering a digital space for users to explore and purchase authentic, handcrafted building materials that carry cultural significance.
+Enthusiasts seeking unique, handcrafted and culturally significant building materials often face challenges in finding and acquiring these items, which are scattered across the globe. 'Ambience' addresses this issue by offering a digital space for its users to explore and purchase authentic, handcrafted building materials that carry cultural significance.
 
 ### User Profile
 
-**Building Material Enthusiasts:**
+**Building Material Enthusiasts: Architects, Interior Designers, Builders, Home Owners**
 
-- Explore a curated collection of traditionally made interior building materials.
-- Gain insights into the cultural and historical significance of each material.
-- Purchase authentic, handmade building materials directly from artisans around the world.
+- Explore a curated collection of traditionally made interior and exterior building materials.
+- Gain insights into the cultural and historical significance of each material and its making techniques.
+- Purchase authentic, handmade building materials sourced from artisans around the world.
+
+Example materials: Handpainted floor tiles, Wall claddings, Ceiling tiles, Roof tiles, Partition materials, Coloures glass, etc that are significant to the craftsmanship and architectural practices in different regions of the world.
 
 ### Features
 
 1. **Online Marketplace:**
 
-   - Seamless e-commerce features allowing users to browse, search, and purchase traditional building materials from various regions.
+   - Seamless e-commerce features allowing users to browse, search, and purchase traditional building materials from various regions in wholesale and retail quantities.
 
 2. **Craftsmanship Showcase:**
 
@@ -33,12 +35,11 @@ Enthusiasts seeking traditional interior building materials often face challenge
 
 - Frontend: React.js
 - Backend: Node.js, Express.js
-- Database: MongoDB (for example)
-- Payment Gateway: Secure and widely-used gateway (e.g., Stripe)
+- Database: Json
 
 #### APIs
 
-List any external sources of data that will be used in your app.
+Create a database of construction and decoration materials
 
 #### Sitemap
 
@@ -64,7 +65,7 @@ _Mockups will be provided using Figma, showcasing the key screens of the platfor
 
 #### Auth
 
-Nice to have
+Seller Authentication: Nice to have
 
 ### Roadmap
 
@@ -92,3 +93,5 @@ Nice to have
 ### Nice-to-haves
 
 User authentication will be implemented for secure login and user profile management.
+
+Payment method and pathway
