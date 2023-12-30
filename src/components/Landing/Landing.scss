@@ -1,0 +1,47 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/colors";
+@import "../../styles/partials/mixins";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "AvenirNextLTPro";
+}
+
+.landing {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  &__top {
+    border-bottom: 1px solid $primary-black;
+  }
+  &__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $primary-black;
+    padding-top: 1.5rem;
+    margin-bottom: 0;
+  }
+  &__description {
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding-bottom: 0.5rem;
+  }
+  //   &__bottom {
+  //   }
+  &__more-details {
+    display: flex;
+  }
+  &__img-container {
+    padding-top: 1rem;
+  }
+  &__img {
+    width: 80%;
+    padding-right: 1rem;
+    border-right: 1px solid $primary-black;
+  }
+  &__detailed-decription {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    padding-top: 5rem;
+  }
+}
