@@ -1,0 +1,24 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/colors";
+@import "../../styles/partials/mixins";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $primary-black;
+  }
+  &__menu-icon {
+    padding: 1rem;
+    border-right: 1px solid $primary-black;
+  }
+  &__cart-icon {
+    padding: 1rem;
+    border-left: 1px solid $primary-black;
+  }
+}
