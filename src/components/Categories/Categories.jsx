@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Categories.scss";
 
-// Rename inner Categories to CategoryItem
 function CategoryItem({ id, name, image, index }) {
-  const isEven = index % 2 === 0;
+  const isEven = (index + 1) % 2 === 0;
 
   return (
     <div className="categories__container">
