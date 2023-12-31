@@ -1,18 +1,20 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
+import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
-import Landing from "./components/Landing/Landing";
+
+const SERVER_URL = "http://localhost:8080";
 
 function App() {
   return (
-    <div>
-      {/* <BrowserRouter> */}
+    <BrowserRouter>
       <Header />
-      <Landing />
-      {/* <Routes>
-          <Route path="/" element={<HomePage />} />
-        </Routes> */}
-      {/* </BrowserRouter> */}
-    </div>
+      <Routes>
+        <Route path="/categories" element={<HomePage />} />
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
