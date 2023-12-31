@@ -1,0 +1,30 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/colors";
+@import "../../styles/partials/mixins";
+
+body {
+  font-family: "AvenirNextLTPro";
+}
+
+.categories {
+  &__container {
+    display: flex;
+    border: 1px solid $primary-black;
+    border-bottom: none;
+  }
+  &__title {
+    display: flex;
+    font-size: 1.625rem;
+    font-weight: 400;
+    padding-left: 2.2rem;
+    padding-top: 2.5rem;
+  }
+  &__cover-image-right {
+    width: 50%;
+    border-right: 1px solid $primary-black;
+  }
+  &__cover-image-left {
+    width: 50%;
+    border-left: 1px solid $primary-black;
+  }
+}

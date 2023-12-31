@@ -33,15 +33,16 @@ body {
   }
   &__img-container {
     padding-top: 1rem;
+    padding-bottom: 1.2rem;
   }
   &__img {
     width: 80%;
-    padding-right: 1rem;
-    border-right: 1px solid $primary-black;
+    padding-right: 1.5rem;
+    border-right: 2px solid rgba(12, 12, 12, 0.3);
   }
   &__detailed-decription {
     font-size: 0.6875rem;
     font-weight: 400;
-    padding-top: 5rem;
+    padding-top: 4.5rem;
   }
 }
