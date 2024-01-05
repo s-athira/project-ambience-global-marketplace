@@ -1,0 +1,32 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/colors";
+@import "../../styles/partials/mixins";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "AvenirNextLTPro";
+}
+
+.materials-page {
+  &__title-container {
+    background-image: url("../../assets/images/wall-cladding-landing-img.svg");
+    background-size: cover;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $primary-white;
+    padding-top: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  &__inspirations-link {
+    color: $primary-white;
+  }
+}
