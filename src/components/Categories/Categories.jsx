@@ -1,19 +1,30 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Categories.scss";
 
 function CategoryItem({ id, name, image, index }) {
   const isEven = (index + 1) % 2 === 0;
 
   return (
-    <div className="categories__container">
-      {isEven && (
-        <img src={image} alt={name} className="categories__cover-image-right" />
-      )}
-      <h2 className="categories__title">{name}</h2>
-      {!isEven && (
-        <img src={image} alt={name} className="categories__cover-image-left" />
-      )}
-    </div>
+    <Link to={`/materials/${id}`} className="categories__link">
+      <div className="categories__container">
+        {isEven && (
+          <img
+            src={image}
+            alt={name}
+            className="categories__cover-image-right"
+          />
+        )}
+        <h2 className="categories__title">{name}</h2>
+        {!isEven && (
+          <img
+            src={image}
+            alt={name}
+            className="categories__cover-image-left"
+          />
+        )}
+      </div>
+    </Link>
   );
 }
 

@@ -4,6 +4,8 @@
 
 The Unique Building Materials Marketplace, called Ambience is a distinctive online platform designed to connect construction businesses, architects and designers with a passion for unique, traditionally made building materials sourced from around the world. This marketplace not only provides access to and simplifies the process of purchasing these materials but also aims to showcase the rich cultural heritage, craftsmanship, and diverse techniques involved in their creation.
 
+Ambience, our Unique Building Materials Marketplace, is an innovative online platform meticulously designed to bring together construction businesses, architects, designers, and enthusiasts who share a passion for distinct, traditionally crafted building materials sourced globally. This user-friendly platform streamlines the purchasing process, offering seamless access to these unique materials for anyone interested. Beyond transactions, Ambience aims to illuminate the rich cultural heritage, craftsmanship, and diverse techniques behind the creation of these materials.
+
 ### Problem
 
 Enthusiasts seeking unique, handcrafted and culturally significant building materials often face challenges in finding and acquiring these items, which are scattered across the globe. 'Ambience' addresses this issue by offering a digital space for its users to explore and purchase authentic, handcrafted building materials that carry cultural significance.

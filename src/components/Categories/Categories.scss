@@ -7,10 +7,19 @@ body {
 }
 
 .categories {
+  &__link {
+    text-decoration: none;
+    color: $primary-black;
+  }
   &__container {
     display: flex;
     border: 1px solid $primary-black;
     border-bottom: none;
+
+    &:hover {
+      border: 2px solid darken($primary-black, 10%);
+      border-bottom: 1px solid $primary-black;
+    }
   }
   &__title {
     display: flex;
