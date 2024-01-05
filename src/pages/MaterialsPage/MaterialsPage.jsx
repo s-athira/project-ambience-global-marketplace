@@ -9,6 +9,7 @@ function MaterialsPage() {
   const { id } = useParams();
   const [materials, setMaterials] = useState([]);
   const [categoryTitle, setCategoryTitle] = useState("");
+  const [categoryBannerimg, setCategoryBannerimg] = useState("");
 
   useEffect(() => {
     // Fetch materials based on the category ID
@@ -31,14 +32,28 @@ function MaterialsPage() {
             );
             if (selectedCategory) {
               setCategoryTitle(selectedCategory.name);
+              setCategoryBannerimg(selectedCategory.bannerimg);
             }
           });
       });
   }, [id]);
 
+  const titleContainerStyle = {
+    backgroundImage: `url(${categoryBannerimg})`,
+    backgroundSize: "cover",
+    height: "200px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+
   return (
     <div className="materials-page">
-      <section className="materials-page__title-container">
+      <section
+        className="materials-page__title-container"
+        style={titleContainerStyle}
+      >
         <h2 className="materials-page__title">{categoryTitle}</h2>
         <p className="materials-page__inspirations-link">
           Explore Design Inspirations >
