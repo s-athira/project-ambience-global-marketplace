@@ -4,6 +4,7 @@ import "./App.scss";
 import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
 import MaterialsPage from "./pages/MaterialsPage/MaterialsPage";
+import MaterialsDetailsPage from "./pages/MaterialsDetailsPage/MaterialsDetailsPage";
 
 const SERVER_URL = "http://localhost:8080";
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/categories" element={<HomePage />} />
         <Route path="/materials/:id" element={<MaterialsPage />} />
+        <Route path="/materialdetails/:id" element={<MaterialsDetailsPage />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
     </BrowserRouter>

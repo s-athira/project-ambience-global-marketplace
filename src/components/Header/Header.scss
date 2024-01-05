@@ -21,4 +21,16 @@ body {
     padding: 1rem;
     border-left: 1px solid $primary-black;
   }
+  &__logo {
+    font-size: 2rem;
+    font-weight: 500;
+    color: $primary-black;
+    padding-top: 0.3rem;
+    margin: 0;
+    padding-right: 14.5rem;
+  }
+}
+.home-page__link {
+  text-decoration: none;
+  color: $primary-black;
 }
