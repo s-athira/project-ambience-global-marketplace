@@ -34,19 +34,46 @@ function MaterialsDetailsPage() {
 
   return (
     <div>
-      <h2>Materials Details Page</h2>
       {material ? (
-        <div>
-          <h3>{material.name}</h3>
-          <img src={material.image} alt={material.name} />
-          <p>Dimensions: {material.dimensions}</p>
-          <p>Required: {material.required}</p>
-          <p>Weight: {material.weight}</p>
-          <p>Category: {material.category.join(", ")}</p>
-          <p>Colors: {material.colors.join(", ")}</p>
-          <p>Min Order Quantity: {material.min_order_quantity}</p>
-          <p>Description: {material.description}</p>
-          {/* Add additional material details as needed */}
+        <div className="mdetails">
+          <img
+            className="mdetails__img"
+            src={material.image}
+            alt={material.name}
+          />
+          <section className="mdetails__info">
+            <h3 className="mdetails__title">{material.name}</h3>
+
+            <p className="mdetails__dimensions">
+              <strong>Dimensions: </strong>
+              {material.dimensions}
+            </p>
+            <p className="mdetails__required">
+              <strong>Required: </strong>
+              {material.required}
+            </p>
+            <p className="mdetails__weight">
+              <strong>Weight: </strong>
+              {material.weight}
+            </p>
+            <p className="mdetails__category">
+              <strong>Category: </strong>
+              {material.category.join(", ")}
+            </p>
+            <p className="mdetails__colors">
+              <strong>Colors: </strong>
+              {material.colors.join(", ")}
+            </p>
+            <p className="mdetails__order-quantity">
+              <strong>Min Order Quantity: </strong>
+              {material.min_order_quantity}
+            </p>
+            <p className="mdetails__description">
+              <strong>Description: </strong>
+              {material.description}
+            </p>
+            {/* Add additional material details as needed */}
+          </section>
         </div>
       ) : (
         <p>Loading material details...</p>

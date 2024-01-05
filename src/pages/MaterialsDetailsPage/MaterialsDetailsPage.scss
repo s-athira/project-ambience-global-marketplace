@@ -7,3 +7,47 @@ body {
   padding: 0;
   font-family: "AvenirNextLTPro";
 }
+
+.mdetails {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  @include desktop {
+    flex-direction: row;
+  }
+
+  &__img {
+    width: 99.5%;
+    border-left: 1px solid $primary-black;
+    border-right: 1px solid $primary-black;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $primary-black;
+    color: $primary-black;
+  }
+  &__title {
+    margin: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  &__dimensions,
+  &__required,
+  &__weight,
+  &__category,
+  &__colors,
+  &__order-quantity,
+  &__description {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+}
