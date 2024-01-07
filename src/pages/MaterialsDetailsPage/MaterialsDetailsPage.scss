@@ -33,9 +33,10 @@ body {
   }
   &__title {
     margin: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.625rem;
     font-weight: bold;
   }
+  &__price,
   &__dimensions,
   &__required,
   &__weight,
@@ -49,5 +50,91 @@ body {
     margin-right: 1rem;
     font-size: 0.875rem;
     font-weight: 400;
+  }
+
+  &__quantity-title {
+    margin: 1rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.5;
+    margin-top: 0;
+    padding-top: 0.5rem;
+  }
+  &__quantity-control {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-bottom: 0.5rem;
+    border-image: none;
+  }
+
+  &__quantity-btn-left,
+  &__quantity-btn-right {
+    font-size: 1.5rem;
+    font-weight: 100;
+    height: 2.5rem;
+    width: 3rem;
+    color: $primary-black;
+    background-color: $primary-white;
+    border-radius: 0;
+    border-style: ridge;
+    border-width: 1px;
+    border-color: $primary-black;
+  }
+
+  &__quantity-btn-left {
+    padding-bottom: 0.5rem;
+  }
+
+  &__quantity-input {
+    margin: 0;
+    width: 15rem;
+    height: 2.25rem;
+    text-align: center;
+    color: $primary-black;
+    border-radius: 0;
+    border-style: ridge;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+    border-color: $primary-black;
+    font-family: "AvenirNextLTPro";
+    font-size: 0.875rem;
+  }
+
+  &__quote-request {
+    display: flex;
+    justify-content: center;
+    font-size: 0.875rem;
+  }
+
+  &__button {
+    background-color: $primary-black;
+    color: $primary-white;
+    border-color: $primary-black;
+    border-style: ridge;
+    border-radius: 0;
+    border-width: 0;
+    height: 2.75rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-family: "AvenirNextLTPro";
+    font-size: 0.875rem;
+    margin-top: 1rem;
+  }
+  &__secondary-button {
+    margin-top: 1rem;
+    background-color: $primary-white;
+    border-color: $primary-black;
+    border-style: ridge;
+    border-radius: 0;
+    border-width: 1px;
+    height: 2.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-family: "AvenirNextLTPro";
+    font-size: 0.875rem;
   }
 }

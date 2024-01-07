@@ -8,6 +8,7 @@ const MATERIALS_JSON_URL = "http://localhost:8080/materials";
 function MaterialsDetailsPage() {
   const { id } = useParams();
   const [material, setMaterial] = useState(null);
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     // Fetch material details based on the id from materials.json
@@ -32,6 +33,16 @@ function MaterialsDetailsPage() {
     fetchMaterialDetails();
   }, [id]);
 
+  const handleQuantityChange = (e) => {
+    const newQuantity = parseInt(e.target.value, 10);
+    setQuantity(newQuantity);
+  };
+
+  const addToCart = () => {
+    // Implement logic to add material and quantity to the cart
+    console.log(`Added ${quantity} ${material.name}(s) to the cart.`);
+  };
+
   return (
     <div>
       {material ? (
@@ -43,6 +54,11 @@ function MaterialsDetailsPage() {
           />
           <section className="mdetails__info">
             <h3 className="mdetails__title">{material.name}</h3>
+
+            <p className="mdetails__price">
+              <strong>Price: </strong>
+              {material.price}
+            </p>
 
             <p className="mdetails__dimensions">
               <strong>Dimensions: </strong>
@@ -64,15 +80,48 @@ function MaterialsDetailsPage() {
               <strong>Colors: </strong>
               {material.colors.join(", ")}
             </p>
-            <p className="mdetails__order-quantity">
-              <strong>Min Order Quantity: </strong>
-              {material.min_order_quantity}
-            </p>
             <p className="mdetails__description">
               <strong>Description: </strong>
               {material.description}
             </p>
-            {/* Add additional material details as needed */}
+            <h3 className="mdetails__quantity-title">Quantity</h3>
+
+            <div className="mdetails__quantity-control">
+              <button
+                className="mdetails__quantity-btn-left"
+                onClick={() => setQuantity(Math.max(1, quantity - 1))}
+              >
+                -
+              </button>
+              <input
+                className="mdetails__quantity-input"
+                type="number"
+                value={quantity}
+                onChange={handleQuantityChange}
+                min={1}
+              />
+              <button
+                className="mdetails__quantity-btn-right"
+                onClick={() => setQuantity(quantity + 1)}
+              >
+                +
+              </button>
+            </div>
+
+            <p className="mdetails__order-quantity">
+              Min Order Quantity:
+              {material.min_order_quantity}
+            </p>
+
+            <button className="mdetails__button" onClick={addToCart}>
+              Add to Cart
+            </button>
+            <button className="mdetails__secondary-button" onClick={addToCart}>
+              Buy Now
+            </button>
+            <p className="mdetails__quote-request">
+              Request a Quote for Wholesale Orders
+            </p>
           </section>
         </div>
       ) : (
