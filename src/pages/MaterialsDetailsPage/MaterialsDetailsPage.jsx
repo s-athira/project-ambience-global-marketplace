@@ -38,6 +38,19 @@ function MaterialsDetailsPage() {
     setQuantity(newQuantity);
   };
 
+  const handleImageClick = (index) => {
+    // Move the clicked image to the end of the array
+    const updatedMoreImages = [...material.more_images];
+    const clickedImage = updatedMoreImages.splice(index, 1)[0];
+    updatedMoreImages.push(material.image);
+
+    setMaterial((prevMaterial) => ({
+      ...prevMaterial,
+      image: clickedImage,
+      more_images: updatedMoreImages,
+    }));
+  };
+
   const addToCart = () => {
     // Implement logic to add material and quantity to the cart
     console.log(`Added ${quantity} ${material.name}(s) to the cart.`);
@@ -52,6 +65,18 @@ function MaterialsDetailsPage() {
             src={material.image}
             alt={material.name}
           />
+          <section className="mdetails__more-imgs-container">
+            {material.more_images.map((image, index) => (
+              <img
+                key={index}
+                className="mdetails__more-imgs"
+                src={image}
+                alt={`${material.name} - Image ${index + 2}`}
+                onClick={() => handleImageClick(index)}
+              />
+            ))}
+          </section>
+
           <section className="mdetails__info">
             <h3 className="mdetails__title">{material.name}</h3>
 

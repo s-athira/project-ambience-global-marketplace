@@ -22,8 +22,17 @@ body {
 
   &__img {
     width: 99.5%;
-    border-left: 1px solid $primary-black;
-    border-right: 1px solid $primary-black;
+    border: 1px solid $primary-black;
+    border-top: none;
+  }
+  &__more-imgs-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+  }
+  &__more-imgs {
+    width: 20%;
+    border: 1px solid $primary-black;
   }
   &__info {
     display: flex;
