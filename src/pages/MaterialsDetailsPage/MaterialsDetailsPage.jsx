@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./MaterialsDetailsPage.scss";
 
 const SERVER_URL = "http://localhost:8080";
@@ -113,15 +113,23 @@ function MaterialsDetailsPage() {
               {material.min_order_quantity}
             </p>
 
-            <button className="mdetails__button" onClick={addToCart}>
+            <Link
+              to="/addedtocart"
+              className="mdetails__button"
+              onClick={addToCart}
+            >
               Add to Cart
-            </button>
-            <button className="mdetails__secondary-button" onClick={addToCart}>
+            </Link>
+            <Link
+              to="/cart"
+              className="mdetails__secondary-button"
+              onClick={addToCart}
+            >
               Buy Now
-            </button>
-            <p className="mdetails__quote-request">
+            </Link>
+            <Link to="/getquote" className="mdetails__quote-request">
               Request a Quote for Wholesale Orders
-            </p>
+            </Link>
           </section>
         </div>
       ) : (
