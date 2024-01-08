@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import "./MaterialsDetailsPage.scss";
 
 const SERVER_URL = "http://localhost:8080";
@@ -7,6 +7,7 @@ const MATERIALS_JSON_URL = "http://localhost:8080/materials";
 
 function MaterialsDetailsPage() {
   const { id } = useParams();
+  const history = useNavigate();
   const [material, setMaterial] = useState(null);
   const [quantity, setQuantity] = useState(1);
 
@@ -19,7 +20,6 @@ function MaterialsDetailsPage() {
         const selectedMaterial = data.find(
           (item) => item.id === parseInt(id, 10)
         );
-
         if (selectedMaterial) {
           setMaterial(selectedMaterial);
         } else {
@@ -32,7 +32,6 @@ function MaterialsDetailsPage() {
 
     fetchMaterialDetails();
   }, [id]);
-
   const handleQuantityChange = (e) => {
     const newQuantity = parseInt(e.target.value, 10);
     setQuantity(newQuantity);
@@ -53,7 +52,7 @@ function MaterialsDetailsPage() {
 
   const addToCart = () => {
     // Implement logic to add material and quantity to the cart
-    console.log(`Added ${quantity} ${material.name}(s) to the cart.`);
+    navigate(`/cart/${id}?quantity=${quantity}`);
   };
 
   return (
@@ -84,7 +83,6 @@ function MaterialsDetailsPage() {
               <strong>Price: </strong>
               {material.price}
             </p>
-
             <p className="mdetails__dimensions">
               <strong>Dimensions: </strong>
               {material.dimensions}
@@ -110,7 +108,6 @@ function MaterialsDetailsPage() {
               {material.description}
             </p>
             <h3 className="mdetails__quantity-title">Quantity</h3>
-
             <div className="mdetails__quantity-control">
               <button
                 className="mdetails__quantity-btn-left"
@@ -132,14 +129,12 @@ function MaterialsDetailsPage() {
                 +
               </button>
             </div>
-
             <p className="mdetails__order-quantity">
               Min Order Quantity:
               {material.min_order_quantity}
             </p>
-
             <Link
-              to="/addedtocart"
+              to={`/cart/${id}?quantity=${quantity}`}
               className="mdetails__button"
               onClick={addToCart}
             >
