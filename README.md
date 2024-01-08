@@ -2,9 +2,7 @@
 
 ## Overview
 
-The Unique Building Materials Marketplace, called Ambience is a distinctive online platform designed to connect construction businesses, architects and designers with a passion for unique, traditionally made building materials sourced from around the world. This marketplace not only provides access to and simplifies the process of purchasing these materials but also aims to showcase the rich cultural heritage, craftsmanship, and diverse techniques involved in their creation.
-
-Ambience, our Unique Building Materials Marketplace, is an innovative online platform meticulously designed to bring together construction businesses, architects, designers, and enthusiasts who share a passion for distinct, traditionally crafted building materials sourced globally. This user-friendly platform streamlines the purchasing process, offering seamless access to these unique materials for anyone interested. Beyond transactions, Ambience aims to illuminate the rich cultural heritage, craftsmanship, and diverse techniques behind the creation of these materials.
+Ambience, a Unique Building Materials Marketplace, is an innovative online platform meticulously designed to bring together construction businesses, architects, designers, and enthusiasts who share a passion for distinct, traditionally crafted building materials sourced globally. This user-friendly platform streamlines the purchasing process, offering seamless access to these unique materials for anyone interested. Beyond transactions, Ambience aims to illuminate the rich cultural heritage, craftsmanship, and diverse techniques behind the creation of these materials.
 
 ### Problem
 
@@ -61,7 +59,8 @@ _Mockups will be provided using Figma, showcasing the key screens of the platfor
 
 #### Endpoints
 
-- `/api/buildingmaterials` (GET)
+- `/api/categories` (GET)
+- `/api/materials` (GET)
 - `/api/orders` (POST)
 - `/api/craftsmanship` (GET)
 
@@ -97,3 +96,32 @@ Seller Authentication: Nice to have
 User authentication will be implemented for secure login and user profile management.
 
 Payment method and pathway
+
+# Installation Details
+
+To view and run Ambience locally, follow these steps:
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/your-username/ambience.git
+
+   ```
+
+2. cd ambience
+
+3. npm install
+
+4. npm start
+
+# Additional Instructions
+
+Ensure you have Node.js installed on your machine before running the npm install command.
+
+Verify that you have Git installed for cloning the repository.
+
+Make sure the required backend server (Node.js and Express.js) is running. Update the server URL in the frontend code if needed.
+
+For a smoother development experience, it's recommended to use the latest LTS version of Node.js.
+
+Happy exploring and crafting with Ambience!
