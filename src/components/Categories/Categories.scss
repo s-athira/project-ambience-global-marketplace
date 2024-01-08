@@ -27,10 +27,22 @@ body {
     font-weight: 400;
     padding-left: 2.2rem;
     padding-top: 2.5rem;
+
+    @include tablet {
+      padding-left: 7rem;
+      font-size: 2.375rem;
+      font-weight: 600;
+      padding-top: 6.5rem;
+    }
   }
   &__cover-image-right {
     width: 50%;
     border-right: 1px solid $primary-black;
+
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+    }
   }
   &__cover-image-left {
     width: 50%;
