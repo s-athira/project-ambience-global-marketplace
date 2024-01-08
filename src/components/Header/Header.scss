@@ -28,6 +28,10 @@ body {
     padding-top: 0.4rem;
     margin: 0;
     padding-right: 14.5rem;
+
+    @include tablet {
+      padding-right: 38.5rem;
+    }
   }
 }
 .home-page__link {
