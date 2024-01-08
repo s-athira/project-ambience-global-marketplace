@@ -1,43 +1,65 @@
 import React from "react";
-import { Link, useParams, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./CartPage.scss";
 
 const SERVER_URL = "http://localhost:8080";
 
-function CartPage() {
-  const { id } = useParams();
+const CartPage = () => {
   const location = useLocation();
-  const addToCart = () => {
-    // Extract material details from the URL parameters
-    const searchParams = new URLSearchParams(location.search);
-    const quantity = searchParams.get("quantity");
+  console.log("Location Object:", location);
 
-    // Log or update state with the selected material details
-    console.log(`Material ID: ${id}, Quantity: ${quantity}`);
+  const { material, quantity } = location.state || {
+    material: null,
+    quantity: 0,
   };
+  const totalPrice =
+    new URLSearchParams(location.search).get("totalPrice") || 0;
+
+  console.log("Location State:", location.state);
+
+  if (!material) {
+    // Material is not defined, handle this case (e.g., redirect to another page)
+    console.error("Material not found in cart state");
+    // You may want to navigate to another page or display an error message.
+    return (
+      <div>
+        <p>Error: Material not found in the cart.</p>
+        {/* You can add additional logic or redirect the user */}
+      </div>
+    );
+  }
 
   return (
     <div>
       <div className="cart">
         <h3 className="cart__title">Order Summary</h3>
-        <img className="cart__img" src="image" alt="name" />
-        <h3 className="cart__material-name">Material name</h3>
-        <section className="cart__quantity-price-container">
-          <p className="cart__selected-quantity">Quantity (1)</p>
-          <h3 className="cart__selected-price">$100</h3>
-        </section>
+        {/* Display material details and quantity as needed */}
+        <>
+          <img className="cart__img" src={material.image} alt={material.name} />
+          <h3 className="cart__material-name">{material.name}</h3>
+          <section className="cart__quantity-price-container">
+            <p className="cart__selected-quantity">Quantity ({quantity})</p>
+            <h3 className="cart__selected-price">{`$${material.price}`}</h3>
+          </section>
+        </>
         <section className="cart__button-container">
           <Link
             to="/shopmore"
             className="cart__secondary-button"
-            onClick={addToCart}
+            onClick={() => {
+              // Handle Shop More button click
+              console.log("Shop More clicked");
+            }}
           >
             Shop More
           </Link>
           <Link
-            to={`/checkout/${id}`}
+            to="/checkout"
             className="cart__button"
-            onClick={addToCart}
+            onClick={() => {
+              // Handle Proceed to Pay button click
+              console.log("Proceed to Pay clicked");
+            }}
           >
             Proceed to Pay
           </Link>
@@ -51,6 +73,6 @@ function CartPage() {
       </div>
     </div>
   );
-}
+};
 
 export default CartPage;

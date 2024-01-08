@@ -7,9 +7,10 @@ const MATERIALS_JSON_URL = "http://localhost:8080/materials";
 
 function MaterialsDetailsPage() {
   const { id } = useParams();
-  const history = useNavigate();
+  const navigate = useNavigate();
   const [material, setMaterial] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fetch material details based on the id from materials.json
@@ -27,32 +28,37 @@ function MaterialsDetailsPage() {
         }
       } catch (error) {
         console.error("Error fetching material details", error);
+      } finally {
+        setLoading(false); // Set loading to false regardless of success/failure
       }
     };
 
     fetchMaterialDetails();
   }, [id]);
-  const handleQuantityChange = (e) => {
-    const newQuantity = parseInt(e.target.value, 10);
-    setQuantity(newQuantity);
-  };
-
-  const handleImageClick = (index) => {
-    // Move the clicked image to the end of the array
-    const updatedMoreImages = [...material.more_images];
-    const clickedImage = updatedMoreImages.splice(index, 1)[0];
-    updatedMoreImages.push(material.image);
-
-    setMaterial((prevMaterial) => ({
-      ...prevMaterial,
-      image: clickedImage,
-      more_images: updatedMoreImages,
-    }));
-  };
 
   const addToCart = () => {
-    // Implement logic to add material and quantity to the cart
-    navigate(`/cart/${id}?quantity=${quantity}`);
+    console.log("Adding to cart:", material, quantity);
+
+    if (loading) {
+      console.log("Material details are still loading. Please wait.");
+      return;
+    }
+
+    const totalPrice = material.price * quantity;
+
+    // Get existing cart items from localStorage
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Add the new item to the cart
+    const updatedCart = [...existingCart, { material, quantity, totalPrice }];
+
+    // Update localStorage with the new cart
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+    console.log("Navigating to /cart with state:", { material, quantity });
+
+    // Navigate to the cart page with state
+    navigate("/cart", { state: { material, quantity } });
   };
 
   return (
@@ -134,7 +140,7 @@ function MaterialsDetailsPage() {
               {material.min_order_quantity}
             </p>
             <Link
-              to={`/cart/${id}?quantity=${quantity}`}
+              to="/addedtocart"
               className="mdetails__button"
               onClick={addToCart}
             >
@@ -143,7 +149,7 @@ function MaterialsDetailsPage() {
             <Link
               to="/cart"
               className="mdetails__secondary-button"
-              onClick={addToCart}
+              onClick={() => addToCart()}
             >
               Buy Now
             </Link>
