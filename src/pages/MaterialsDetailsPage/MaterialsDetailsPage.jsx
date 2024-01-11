@@ -7,7 +7,7 @@ const MATERIALS_JSON_URL = "http://localhost:8080/materials";
 
 function MaterialsDetailsPage() {
   const { id } = useParams();
-  const history = useNavigate();
+  const navigate = useNavigate();
   const [material, setMaterial] = useState(null);
   const [quantity, setQuantity] = useState(1);
 
@@ -51,9 +51,21 @@ function MaterialsDetailsPage() {
   };
 
   const addToCart = () => {
-    // Implement logic to add material and quantity to the cart
-    console.log(`Added ${quantity} ${material.name}(s) to the cart.`);
-    navigate(`/cart/${id}?quantity=${quantity}`);
+    // Get items from local storage and parse them into JavaScript
+    const cartItems = JSON.parse(localStorage.getItem("cart"));
+
+    if (cartItems) {
+      // Add the current item to our cart
+      cartItems.push({ material, quantity });
+      console.log(cartItems);
+
+      // Set the localStorage to the updated cart
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+    } else {
+      localStorage.setItem("cart", JSON.stringify([{ material, quantity }]));
+    }
+
+    navigate("/addedtocart");
   };
 
   return (
@@ -136,20 +148,20 @@ function MaterialsDetailsPage() {
               {material.min_order_quantity}
             </p>
 
-            <Link
+            <button
               to="/addedtocart"
               className="mdetails__button"
               onClick={addToCart}
             >
               Add to Cart
-            </Link>
-            <Link
+            </button>
+            <button
               to="/cart"
               className="mdetails__secondary-button"
               onClick={addToCart}
             >
               Buy Now
-            </Link>
+            </button>
             <Link to="/getquote" className="mdetails__quote-request">
               Request a Quote for Wholesale Orders
             </Link>
