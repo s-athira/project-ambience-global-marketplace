@@ -57,7 +57,7 @@ function CartPage() {
           </section>
           <section className="cart__total-container">
             <p className="cart__total-title">Total</p>
-            <p className="cart__total-amount">$30.99</p>
+            <p className="cart__total-amount">$39.99</p>
           </section>
           <Link
             to="/checkout"
