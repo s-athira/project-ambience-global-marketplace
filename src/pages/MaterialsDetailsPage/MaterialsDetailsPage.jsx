@@ -65,7 +65,7 @@ function MaterialsDetailsPage() {
       localStorage.setItem("cart", JSON.stringify([{ material, quantity }]));
     }
 
-    navigate("/addedtocart");
+    navigate("/cart");
   };
 
   return (
