@@ -1,0 +1,130 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/colors";
+@import "../../styles/partials/mixins";
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $primary-black;
+  font-family: "AvenirNextLTPro";
+}
+
+.cart {
+  &__title {
+    margin: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-top: 1rem;
+  }
+  &__image {
+    width: 45%;
+    border: 1px solid $primary-black;
+    margin-left: 1rem;
+  }
+  &__material-name {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: $primary-black;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1rem;
+    padding-top: 0.5rem;
+  }
+  &__quantity-price-container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__selected-quantity {
+    font-size: 1rem;
+    color: $primary-black;
+  }
+  &__selected-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: $primary-black;
+    margin-bottom: 0;
+  }
+  &__button-container {
+    padding-bottom: 2rem;
+  }
+  &__secondary-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $primary-black;
+    margin-top: 1rem;
+    background-color: $primary-white;
+    border-color: $primary-black;
+    border-style: ridge;
+    border-radius: 0;
+    border-width: 1px;
+    height: 2.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-family: "AvenirNextLTPro";
+    font-size: 0.875rem;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: $primary-black;
+    color: $primary-white;
+    border-color: $primary-black;
+    border-style: ridge;
+    border-radius: 0;
+    border-width: 0;
+    height: 2.75rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-family: "AvenirNextLTPro";
+    font-size: 0.875rem;
+    margin-top: 1rem;
+  }
+  &__subtotal-container,
+  &__shipping-container,
+  &__tax-container,
+  &__total-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-bottom: 0.725rem;
+  }
+
+  &__total-container {
+    border-top: 1px solid rgba($color: #121212, $alpha: 0.4);
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    margin-top: 1rem;
+  }
+  &__subtotal-title,
+  &__shipping-title,
+  &__tax-title {
+    font-size: 1rem;
+    color: $primary-black;
+    margin: 0;
+  }
+
+  &__subtotal-amount,
+  &__shipping-amount,
+  &__tax-amount {
+    font-size: 1rem;
+    color: $primary-black;
+    margin: 0;
+  }
+  &__total-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  &__total-amount {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
