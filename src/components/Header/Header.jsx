@@ -15,7 +15,9 @@ const Header = () => {
       <Link to={`/categories`} className="home-page__link">
         <h2 className="header__logo">.a</h2>
       </Link>
-      <img src={cartIcon} alt="cart icon" className="header__cart-icon" />
+      <Link to="/cart">
+        <img src={cartIcon} alt="cart icon" className="header__cart-icon" />
+      </Link>
     </header>
   );
 };

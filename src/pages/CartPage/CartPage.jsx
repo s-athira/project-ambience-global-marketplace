@@ -33,7 +33,7 @@ function CartPage() {
           </section>
           <section className="cart__button-container">
             <Link
-              to="/shopmore"
+              to={`/categories`}
               className="cart__secondary-button"
               onClick={() => {
                 // Handle Shop More button click
