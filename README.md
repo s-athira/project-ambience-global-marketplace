@@ -112,7 +112,7 @@ To view and run Ambience locally, follow these steps:
 
 3. npm install
 
-4. npm start
+4. npm run dev
 
 # Additional Instructions
 
